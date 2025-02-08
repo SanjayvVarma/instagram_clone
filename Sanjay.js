@@ -4,7 +4,7 @@ import { View, Text } from 'react-native';
 const Sanjay = () => {
     return (
         <View>
-            <Text>Hello, I am Sanjay Component!</Text>
+            <Text>Hello, I am Sanjay Varma!</Text>
         </View>
     );
 };
