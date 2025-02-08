@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     },
 
     errText: {
-        color: 'red',
+        color: '#c52929',
         paddingLeft: 5
     }
 })
