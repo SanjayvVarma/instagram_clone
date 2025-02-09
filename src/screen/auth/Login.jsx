@@ -1,11 +1,14 @@
-import { StyleSheet, Image, View, Text } from 'react-native';
+import { StyleSheet, Image, View, Text, TouchableOpacity } from 'react-native';
 import { Formik } from 'formik'
 import React from 'react'
 import { loginValidationSchema } from './utils.js';
 import InputBox from '../../components/InputBox';
 import CustomBtn from '../../components/CustomBtn';
+import { useNavigation } from '@react-navigation/native';
 
 const Login = () => {
+
+    const navigation = useNavigation()
 
     const loginInitialValue = {
         username: '',
@@ -28,7 +31,7 @@ const Login = () => {
                     {({ handleChange, handleBlur, handleSubmit, values, touched, errors, isValid }) => (
                         <View style={styles.formContainer}>
                             <InputBox
-                                placeholder="Username"
+                                placeholder="Username, email address or mobile number"
                                 onChangeText={handleChange('username')}
                                 onBlur={handleBlur('username')}
                                 value={values.username}
@@ -45,14 +48,18 @@ const Login = () => {
                                 errors={errors.password}
                                 secureTextEntry={true}
                             />
-
                             <CustomBtn btnTitle="Login" onPress={handleSubmit} disabled={!isValid} />
                         </View>
                     )}
                 </Formik>
+                <TouchableOpacity style={styles.forgot}>
+                    <Text style={{ fontSize: 15 }}>Forgotten Password?</Text>
+                </TouchableOpacity>
             </View>
             <View style={styles.txtCon}>
-                <Text>Sign Up</Text>
+                <TouchableOpacity onPress={()=>navigation.navigate('Signup')}>
+                    <Text>Create new account</Text>
+                </TouchableOpacity>
             </View>
         </View>
     )
@@ -63,7 +70,8 @@ export default Login
 const styles = StyleSheet.create({
     loginContainer: {
         flex: 1,
-        alignItems: "center"
+        alignItems: "center",
+        justifyContent:'center'
     },
 
     logoSize: {
@@ -79,6 +87,12 @@ const styles = StyleSheet.create({
 
     txtCon: {
         flex: 0.2,
-        marginBottom: 20
+        justifyContent:'flex-end',
+        marginBottom:15
+    },
+
+    forgot: {
+        alignSelf: 'center',
+        marginTop: 20
     }
 })

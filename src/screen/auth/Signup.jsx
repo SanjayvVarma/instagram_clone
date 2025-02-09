@@ -1,11 +1,14 @@
-import { StyleSheet, Image, View, Text } from 'react-native';
+import { StyleSheet, Image, View, Text, TouchableOpacity } from 'react-native';
 import { Formik } from 'formik'
 import React from 'react'
 import InputBox from '../../components/InputBox';
 import CustomBtn from '../../components/CustomBtn';
 import { signupValidationSchema } from './utils.js';
+import { useNavigation } from '@react-navigation/native';
 
 const Signup = () => {
+
+    const navigation = useNavigation()
 
     const loginInitialValue = {
         number: '',
@@ -18,7 +21,7 @@ const Signup = () => {
     return (
         <View style={styles.loginContainer}>
             <View style={styles.logoContainer}>
-                <Text style={styles.logoSize}>Signup with your mobile number</Text>
+                <Text style={styles.logoSize}>What's your mobile number</Text>
                 <Formik
                     initialValues={loginInitialValue}
                     validationSchema={signupValidationSchema}
@@ -41,9 +44,14 @@ const Signup = () => {
                         </View>
                     )}
                 </Formik>
+                <TouchableOpacity style={styles.email}>
+                    <Text style={{ fontSize: 15 }}>Sign up with email</Text>
+                </TouchableOpacity>
             </View>
             <View style={styles.txtCon}>
-                <Text>Login</Text>
+                <TouchableOpacity onPress={() => navigation.goBack()}>
+                    <Text>Login</Text>
+                </TouchableOpacity>
             </View>
         </View>
     )
@@ -65,11 +73,18 @@ const styles = StyleSheet.create({
 
     logoContainer: {
         flex: 0.8,
-        justifyContent: "center"
+        marginTop: 100
     },
 
     txtCon: {
         flex: 0.2,
-        marginBottom: 20
+        justifyContent: 'flex-end',
+        marginBottom: 15
+
+    },
+
+    email: {
+        alignSelf: 'center',
+        marginTop: 20
     }
 })

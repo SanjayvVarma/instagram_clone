@@ -24,7 +24,7 @@ export default InputBox
 
 const styles = StyleSheet.create({
     mainContainer: {
-        height: 78,
+        height: 75,
     },
 
     textInput: {
