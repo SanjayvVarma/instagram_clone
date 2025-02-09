@@ -1,6 +1,6 @@
 import * as Yup from "yup";
 
-const loginValidationSchema = Yup.object({
+export const loginValidationSchema = Yup.object({
     username: Yup.string()
         .required("Enter your username"),
 
@@ -9,4 +9,9 @@ const loginValidationSchema = Yup.object({
         .required("Enter your password")
 })
 
-export default loginValidationSchema;
+export const signupValidationSchema = Yup.object({
+    number: Yup.string()
+        .matches(/^[6789]\d{9}$/, 'Mobile number must start with 6, 7, 8, or 9 and be exactly 10 digits')
+        .required("Enter your mobile number")
+});
+

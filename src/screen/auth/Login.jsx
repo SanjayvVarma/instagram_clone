@@ -1,7 +1,7 @@
 import { StyleSheet, Image, View, Text } from 'react-native';
 import { Formik } from 'formik'
 import React from 'react'
-import loginValidationSchema from './utils.js';
+import { loginValidationSchema } from './utils.js';
 import InputBox from '../../components/InputBox';
 import CustomBtn from '../../components/CustomBtn';
 
@@ -25,7 +25,7 @@ const Login = () => {
                     validationSchema={loginValidationSchema}
                     onSubmit={handleLogin}
                 >
-                    {({ handleChange, handleBlur, handleSubmit, values, touched, errors }) => (
+                    {({ handleChange, handleBlur, handleSubmit, values, touched, errors, isValid }) => (
                         <View style={styles.formContainer}>
                             <InputBox
                                 placeholder="Username"
@@ -46,7 +46,7 @@ const Login = () => {
                                 secureTextEntry={true}
                             />
 
-                            <CustomBtn btnTitle="Login" onPress={handleSubmit} />
+                            <CustomBtn btnTitle="Login" onPress={handleSubmit} disabled={!isValid} />
                         </View>
                     )}
                 </Formik>
