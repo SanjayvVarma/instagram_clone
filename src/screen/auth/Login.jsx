@@ -17,6 +17,7 @@ const Login = () => {
 
     const handleLogin = (values) => {
         console.log("Login Data:", values);
+        navigation.navigate('Home')
     }
 
     return (
