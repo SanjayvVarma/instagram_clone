@@ -67,6 +67,23 @@ const UserData = [
             like: 88,
         }
     },
+    {
+        id: 5,
+        name: 'Juhi',
+        username: 'sonamb12',
+        profile: require('../../assets/data/sonamdp.png'),
+        story: {
+            time: 13,
+            image: require('../../assets/data/sonams.png'),
+        },
+        post: {
+            time: '07:00 AM',
+            date: '12/05/2023',
+            image: require('../../assets/data/sonmp.png'),
+            caption: 'carry on jatta',
+            like: 88,
+        }
+    },
 
 ]
 
