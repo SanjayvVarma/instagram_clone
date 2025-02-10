@@ -6,9 +6,10 @@ import Stories from '../../components/Stories'
 const Dashboard = () => {
     return (
         <View>
-            <Header />
-            <Stories />
+            {/* <Header /> */}
+            {/* <Stories /> */}
         </View>
+
     )
 }
 

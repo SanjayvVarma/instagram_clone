@@ -2,9 +2,10 @@ import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
 const Stories = () => {
+  console.log("✅ Stories Component Loaded");
   return (
     <View>
-      <Text style={{ backgroundColor: 'red', textAlign: 'center' }}>Stories this is hsh</Text>
+      <Text>Stories</Text>
     </View>
   )
 }
