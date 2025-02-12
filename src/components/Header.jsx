@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        height: 140
+        height: 60
     },
 
     logoSize: {
@@ -54,13 +54,13 @@ const styles = StyleSheet.create({
     message: {
         position: 'absolute',
         bottom: 253,
-        left:13
+        left: 13
     },
     messText: {
         backgroundColor: 'red',
         borderRadius: 10,
         paddingHorizontal: 5,
-        fontSize:9,
-        color:'#fff'
+        fontSize: 9,
+        color: '#fff'
     }
 })
