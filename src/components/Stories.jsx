@@ -40,7 +40,8 @@ const styles = StyleSheet.create({
   imgView: {
     borderWidth: 3,
     borderRadius: 40,
-    padding: 2
+    padding: 2,
+    borderColor:'#f74f4f'
   },
 
   img: {
