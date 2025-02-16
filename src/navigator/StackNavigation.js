@@ -6,6 +6,7 @@ import Login from '../screen/auth/Login'
 import Signup from '../screen/auth/Signup'
 import Dashboard from '../screen/dashboard/Dashboard'
 import StoryView from '../components/StoryView'
+import BottomNavigation from './BottomNavigation'
 
 
 const StackNavigation = () => {
@@ -19,6 +20,7 @@ const StackNavigation = () => {
                 <Stack.Screen name='Signup' component={Signup} />
                 <Stack.Screen name='Home' component={Dashboard} />
                 <Stack.Screen name='StoryView' component={StoryView} />
+                <Stack.Screen name='Dashboard' component={BottomNavigation} />
             </Stack.Navigator>
         </NavigationContainer>
     )
