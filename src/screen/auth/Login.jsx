@@ -17,7 +17,7 @@ const Login = () => {
 
     const handleLogin = (values) => {
         console.log("Login Data:", values);
-        navigation.navigate('Home')
+        navigation.navigate('Dashboard')
     }
 
     return (
@@ -58,7 +58,7 @@ const Login = () => {
                 </TouchableOpacity>
             </View>
             <View style={styles.txtCon}>
-                <TouchableOpacity onPress={()=>navigation.navigate('Signup')}>
+                <TouchableOpacity onPress={() => navigation.navigate('Signup')}>
                     <Text>Create new account</Text>
                 </TouchableOpacity>
             </View>
@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
     loginContainer: {
         flex: 1,
         alignItems: "center",
-        justifyContent:'center'
+        justifyContent: 'center'
     },
 
     logoSize: {
@@ -88,8 +88,8 @@ const styles = StyleSheet.create({
 
     txtCon: {
         flex: 0.2,
-        justifyContent:'flex-end',
-        marginBottom:15
+        justifyContent: 'flex-end',
+        marginBottom: 15
     },
 
     forgot: {
