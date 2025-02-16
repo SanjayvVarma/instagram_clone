@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 
 const ProfileHeader = () => {
 
-    const [open, setOpen] = useState(true)
+    const [open, setOpen] = useState(false)
 
     const handleModel = () => {
         setOpen(!open)
