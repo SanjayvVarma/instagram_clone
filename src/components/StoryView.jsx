@@ -33,7 +33,7 @@ const StoryView = ({ route }) => {
                         width: screenWidth,
                         height: screenHeight - 100,
                         borderBottomRightRadius: 15,
-                        borderBottomLeftRadius: 15 
+                        borderBottomLeftRadius: 15
                     }}
                 />
                 <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 10, marginLeft: 10, gap: 15 }}>
@@ -41,16 +41,19 @@ const StoryView = ({ route }) => {
                         style={{
                             borderWidth: 1,
                             borderColor: 'white',
-                            width: 300,
+                            width: 270,
                             paddingHorizontal: 15,
                             color: 'white',
                             borderRadius: 30,
                         }}
-                        placeholder='Message'
+                        placeholder='send message....'
                         placeholderTextColor='white'
                     />
                     <TouchableOpacity>
-                        <Image style={{ width: 23, height: 23, tintColor: 'white' }} source={require('../../assets/message.png')} />
+                        <Image style={{ width: 30, height: 30, tintColor: 'white' }} source={require('../../assets/like.png')} />
+                    </TouchableOpacity>
+                    <TouchableOpacity>
+                        <Image style={{ width: 28, height: 28, tintColor: 'white' }} source={require('../../assets/message.png')} />
                     </TouchableOpacity>
                 </View>
             </View>
