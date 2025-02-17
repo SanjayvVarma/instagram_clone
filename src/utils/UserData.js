@@ -69,17 +69,17 @@ const UserData = [
     },
     {
         id: 4,
-        name: 'Sonam',
-        username: 'sonamb12',
-        profile: require('../../assets/data/sonamdp.png'),
+        name: 'Sanjay',
+        username: 'sanjayazad_',
+        profile: require('../../assets/sanjay.png'),
         story: {
             time: 13,
-            image: require('../../assets/data/sonams.png'),
+            image: require('../../assets/sanjay.png'),
         },
         post: {
             time: '07:00 AM',
             date: '12/05/2023',
-            image: require('../../assets/data/sonmp.png'),
+            image: require('../../assets/sanjay.png'),
             caption: 'carry on jatta',
             like: 88,
         }
