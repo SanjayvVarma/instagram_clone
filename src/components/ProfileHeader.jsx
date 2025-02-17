@@ -1,9 +1,12 @@
 import { StyleSheet, Text, View, Image, TouchableOpacity, Modal } from 'react-native'
 import React, { useState } from 'react'
+import { useNavigation } from '@react-navigation/native'
 
 const ProfileHeader = () => {
 
     const [open, setOpen] = useState(false)
+    const navigation = useNavigation()
+
 
     const handleModel = () => {
         setOpen(!open)
@@ -14,7 +17,7 @@ const ProfileHeader = () => {
             <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
                 <Text style={{ fontSize: 24, fontWeight: '500', color: 'black' }}>sanjayazad_</Text>
                 <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={() => navigation.navigate('AddPost')}>
                         <Image
                             style={{ height: 24, width: 24 }}
                             source={require('../../assets/footer/addPost.png')}
