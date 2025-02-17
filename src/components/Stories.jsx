@@ -1,4 +1,4 @@
-import { StyleSheet, Text, TouchableOpacity, View, Image } from 'react-native'
+import { StyleSheet, Text, TouchableOpacity, View, Image, ScrollView } from 'react-native'
 import React from 'react'
 import UserData from '../utils/UserData'
 import { useNavigation } from '@react-navigation/native'
@@ -8,45 +8,57 @@ const Stories = () => {
   const navigation = useNavigation()
 
   return (
-    <View style={styles.mainContainer}>
+    <ScrollView style={styles.mainContainer} horizontal={true} showsHorizontalScrollIndicator={false}>
       {
         UserData.map((item) => (
-          <View key={item.id} style={styles.container}>
-            <TouchableOpacity onPress={() => navigation.navigate('StoryView', { item })}>
-              <View style={styles.imgView}>
-                <Image style={styles.img} source={item.story.image} />
-              </View>
-            </TouchableOpacity>
-            <Text style={{ textAlign: 'center' }}>{item.username}</Text>
-          </View>
-        ))
-      }
-    </View>
-  )
-}
+          <TouchableOpacity
+            key={item.id}
+            onPress={() => navigation.navigate('StoryView', { item })}
+            style={styles.storyItem}
+          >
+            <View style={styles.imgView}>
+              <Image style={styles.img} source={item.story.image} />
+            </View>
+            <Text style={styles.username} numberOfLines={1}>{item.username}</Text>
+          </TouchableOpacity>
+        ))}
+    </ScrollView>
+  );
+};
 
-export default Stories
+export default Stories;
 
 const styles = StyleSheet.create({
   mainContainer: {
+    paddingVertical: 10,
     flexDirection: 'row',
-    marginTop: 7
+    backgroundColor: '#fff',
   },
 
-  container: {
-    marginLeft: 10
+  storyItem: {
+    alignItems: 'center',
+    marginLeft: 10,
   },
 
   imgView: {
     borderWidth: 3,
-    borderRadius: 40,
+    borderRadius: 50,
     padding: 2,
-    borderColor:'#f74f4f'
+    borderColor: '#f74f4f',
   },
 
   img: {
     height: 70,
     width: 70,
-    borderRadius: 35
-  }
-})
+    borderRadius: 50,
+  },
+
+  username: {
+    marginTop: 5,
+    fontSize: 14,
+    fontWeight: '500',
+    color: '#333',
+    textAlign: 'center',
+    width: 70,
+  },
+});
