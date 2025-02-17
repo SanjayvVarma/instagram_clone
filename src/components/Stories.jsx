@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
 
   storyItem: {
     alignItems: 'center',
-    marginLeft: 10,
+    marginLeft: 8,
   },
 
   imgView: {
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
   },
 
   username: {
-    marginTop: 5,
+    marginTop: 1,
     fontSize: 14,
     fontWeight: '500',
     color: '#333',
